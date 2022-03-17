@@ -1,23 +1,30 @@
-const randomNumber = document.querySelector(".randomNumber");
-const guessNumber = document.querySelector(".guessNumber");
-const gameForm = document.querySelector(".game-form");
+const colors = [
+  "#ef5777",
+  "#575fcf",
+  "#4bcffa",
+  "#34e7e4",
+  "#0be881",
+  "#f53b57",
+  "#3c40c6",
+  "#0fbcf9",
+  "#00d8d6",
+  "#05c46b",
+  "#ffc048",
+  "#ffdd59",
+  "#ff5e57",
+  "#d2dae2",
+  "#485460",
+  "#ffa801",
+  "#ffd32a",
+  "#ff3f34",
+];
 
-const result = document.querySelector(".result");
-const showResult = document.querySelector(".showResult");
+const btn = document.querySelector("#btn");
 
-function inputRandomNumber(event) {
-  const random1 = parseInt(randomNumber.value);
-  const guess = parseInt(guessNumber.value);
-  const machineNumber = Math.round(Math.random() * random1);
-  event.preventDefault();
-
-  if (guess === machineNumber) {
-    result.innerHTML = `your chose: ${guess}, the machine chose: ${machineNumber}`;
-    showResult.innerHTML = "You Win!";
-  } else {
-    result.innerHTML = `your chose: ${guess}, the machine chose: ${machineNumber}`;
-    showResult.innerHTML = "You lost!";
-  }
+function colorBtn() {
+  const rc1 = colors[Math.floor(Math.random() * colors.length)];
+  const rc2 = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.background = `linear-gradient(90deg, ${rc1} , ${rc2})`;
 }
 
-gameForm.addEventListener("submit", inputRandomNumber);
+btn.addEventListener("click", colorBtn);
