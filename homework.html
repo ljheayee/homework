@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Vanilla Challenge</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="src/style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>repl.it</title>
   </head>
-
-  <body id="body">
-    <button id="btn">Give me color</button>
+  <body>
+    <form>
+      <h1>Create An Account</h1>
+      <div>
+        <label
+          >First name <input required type="text" placeholder="First name"
+        /></label>
+      </div>
+      <div>
+        <label
+          >Last name <input required type="text" placeholder="Last name"
+        /></label>
+      </div>
+      <div>
+        <label>Email <input required type="email" placeholder="email" /></label>
+      </div>
+      <div>
+        <label
+          >Username <input required type="name" placeholder="Username"
+        /></label>
+      </div>
+      <div>
+        <label
+          >Password
+          <input required minlength="10" type="password" placeholder="Password"
+        /></label>
+      </div>
+      <div>
+        <label>Birth date <input required type="date" /></label>
+      </div>
+      <div>
+        <label>How Happy are you? <input required type="range" /></label>
+      </div>
+      <div>
+        <label>What is your fav. color? <input required type="color" /></label>
+      </div>
+      <input required type="submit" value="create account" />
+    </form>
   </body>
-  <script src="homework.js"></script>
 </html>
