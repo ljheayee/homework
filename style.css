@@ -1,78 +1,80 @@
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+body {
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.square {
+  margin-top: 60px;
+  width: 90vh;
+  height: 90vh;
+  background-color: #6bbcbe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.allBar,
+.allCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 0px;
 }
 
-@keyframes dotAnimation {
-50% {
-  transform: rotate(0.5turn);
-}
-100% {
-  transform: rotate(0.5turn);
-}
-}
-
-.box {
-width: 200px;
-display: flex;
-justify-content: space-around;
+.circle {
+  margin: 0px 20px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
 }
 
-.dots {
-width: 200px;
-display: flex;
-justify-content: space-around;
-animation: dotAnimation 1s ease-in-out infinite;
-margin-bottom: 200px;
+.bar {
+  margin: 0px 5px;
+  width: 15px;
+  height: 100px;
+  background-color: white;
+}
+@keyframes forCircle {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(180deg);
+  }
+}
+.allCircle {
+  animation: forCircle 2s ease-out infinite;
 }
 
-.dot {
-background-color: white;
-width: 20px;
-height: 20px;
-border-radius: 10px;
-/* 👆🏻 If you set the border-radius to half of the width and height 
-it becomes a circle, 50% also works*/
+@keyframes forBar {
+  0% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
 }
 
-.lines {
-width: 150px;
+.bar {
+  animation: forBar 2s ease-in-out infinite;
 }
-
-@keyframes lineAnim {
-0% {
-  transform: none;
+.bar:first-child {
+  animation-delay: 0.1s;
 }
-25% {
-  transform: scaleY(2);
+.bar:nth-child(2) {
+  animation-delay: 0.2s;
 }
-50%,
-100% {
-  transform: none;
+.bar:nth-child(3) {
+  animation-delay: 0.3s;
 }
+.bar:nth-child(4) {
+  animation-delay: 0.4s;
 }
-
-.line {
-width: 20px;
-height: 80px;
-background-color: white;
-animation: lineAnim 1s ease-in-out infinite;
-}
-
-/*
-Remove 'animation-delay and see what happens!!!
-*/
-
-.line:nth-child(2) {
-animation-delay: 0.1s;
-}
-.line:nth-child(3) {
-animation-delay: 0.2s;
-}
-.line:nth-child(4) {
-animation-delay: 0.3s;
-}
-.line:nth-child(5) {
-animation-delay: 0.4s;
+.bar:last-child {
+  animation-delay: 0.5s;
 }
